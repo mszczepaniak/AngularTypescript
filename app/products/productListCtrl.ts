@@ -1,4 +1,5 @@
-interface IProductListModel {
+module app.productList {
+	interface IProductListModel {
 	title: string;
 	showImage: boolean;
 	products: any[];
@@ -48,8 +49,8 @@ class ProductListCtrl implements IProductListModel {
 		this.showImage = !this.showImage;
 	}
 }
-
-angular
-	.module("productManagement")
-	.controller("ProductListCtrl", ProductListCtrl);
-
+	
+	angular
+		.module("productManagement")
+		.controller("ProductListCtrl", ProductListCtrl);	
+}
