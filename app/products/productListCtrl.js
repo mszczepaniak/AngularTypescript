@@ -34,3 +34,6 @@ var ProductListCtrl = (function () {
     }
     return ProductListCtrl;
 })();
+angular
+    .module("productManagement")
+    .controller("ProductListCtrl", ProductListCtrl);

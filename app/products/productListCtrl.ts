@@ -44,3 +44,8 @@ class ProductListCtrl implements IProductListModel {
 
 	}
 }
+
+angular
+	.module("productManagement")
+	.controller("ProductListCtrl", ProductListCtrl);
+
