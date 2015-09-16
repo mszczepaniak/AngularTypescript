@@ -1,5 +1,5 @@
 module app.domain {
-	interface IProduct {
+	export interface IProduct {
 		productId: number;
 		productName: string;
 		productCode: string;
@@ -10,7 +10,7 @@ module app.domain {
 		calculateDiscount(percent: number): number;
 	}
 	
-	class Product implements IProduct {
+	export class Product implements IProduct {
 		constructor(public productId: number, 
 					public productName: string,
 					public productCode: string,
