@@ -2,14 +2,14 @@ module app.productList {
 	interface IProductListModel {
 	title: string;
 	showImage: boolean;
-	products: any[];
+	products: app.domain.IProduct[];
 	toggleImage(): void;
 }
 
 class ProductListCtrl implements IProductListModel {
 	title: string;
 	showImage: boolean;
-	products: any[];
+	products: app.domain.IProduct[];
 	
 	constructor() {
 		this.title = "Product List";
