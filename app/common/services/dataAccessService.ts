@@ -20,4 +20,8 @@ module app.common {
 				return this.$resource("/api/products/:productId");
 			}
 		}
+		
+		angular
+			.module("common.services")
+			.service("dataAccessService", DataAccessService);
 }
