@@ -6,7 +6,7 @@ module app.layout {
 	}
 	class NavigationController {
 		constructor($scope: INavigationScope){
-			$scope.fullName = 'Michael S.';
+			var vm = this;
 		}
 	}	
 }
