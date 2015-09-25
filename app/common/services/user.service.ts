@@ -1,11 +1,12 @@
 module app.services {
 	'use strict';
 	
-	interface IUserService {
+	export interface IUserService {
 		getById(uniqueId: string): ng.IPromise<IUser>;
 	}
 	
 	export interface IUser {
+		firstName: string;
 		eniqueId: string;
 		email: string; 
 		socialnetworks: ISocialNetwork[];
@@ -16,16 +17,20 @@ module app.services {
 		username: string;
 	}
 	
-	class UserService implements IUserService {
+	export class UserService implements IUserService {
 		static $inject = ['$http'];
 		constructor(private $http: ng.IHttpService) {
 			
 		}
 		getById(uniqueId: string): ng.IPromise<IUser> {
 			return this.$http.get('/api/users' + uniqueId)
-				.then((response) => {
+				.then((response: ng.IHttpPromiseCallbackArg<IUser>): IUser => {
 					return response.data;
 				});
 		}
 	}
+	
+	angular
+		.module('app.services')
+		.service('app.services.UserService', UserService);
 }
