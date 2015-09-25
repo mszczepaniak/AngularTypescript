@@ -6,13 +6,13 @@ module app.service {
 	}
 	
 	class SiteSettingsService implements ISiteSettingsService {
-		constructor(private $http: ng.IHttpService) {}
+		constructor(private $http: ng.IHttpService, private apiEndpoint: app.blocks.IApiEndpointConfig) {}
 	}
 	
-	factory.$inject = ['$http'];
+	factory.$inject = ['$http', 'app.blocks.ApiEndpoint'];
 	
-	function factory($http: ng.IHttpService): ISiteSettingsService {
-		return new SiteSettingsService($http);
+	function factory($http: ng.IHttpService, apiEndpoint: app.blocks.IApiEndpointConfig): ISiteSettingsService {
+		return new SiteSettingsService($http, apiEndpoint);
 	}
 	
 	angular

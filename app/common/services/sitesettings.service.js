@@ -4,14 +4,15 @@ var app;
     (function (service) {
         'use strict';
         var SiteSettingsService = (function () {
-            function SiteSettingsService($http) {
+            function SiteSettingsService($http, apiEndpoint) {
                 this.$http = $http;
+                this.apiEndpoint = apiEndpoint;
             }
             return SiteSettingsService;
         })();
-        factory.$inject = ['$http'];
-        function factory($http) {
-            return new SiteSettingsService($http);
+        factory.$inject = ['$http', 'app.blocks.ApiEndpoint'];
+        function factory($http, apiEndpoint) {
+            return new SiteSettingsService($http, apiEndpoint);
         }
         angular
             .module('app.services')
