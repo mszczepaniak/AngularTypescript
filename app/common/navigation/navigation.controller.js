@@ -6,6 +6,10 @@ var app;
         var NavigationController = (function () {
             function NavigationController($scope, userService) {
                 var vm = this;
+                userService.getById('bla')
+                    .then(function (user) {
+                    vm.fullName = user.firstName + ' ';
+                });
             }
             NavigationController.$inject = [
                 'app.services.UserService'

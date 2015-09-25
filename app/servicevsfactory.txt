@@ -1,0 +1,23 @@
+// angular service
+angular
+	.module('app')
+	.service('logger', logger);
+
+function logger() {
+	this.logError = function(message);
+}
+
+
+// angular factory
+// factory does not have constructor
+angular
+	.module('app')
+	.factory('logger', logger);
+	
+function logger() {
+	return {
+		logError: function(message){
+			
+		}
+	}
+}
